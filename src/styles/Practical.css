@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cormorant+Garamond:wght@400;600&family=Lora:wght@400;600&display=swap');
+
+:root {
+    --parchment: #f5e6c8;
+    --ink: #3c2e1f;
+    --leather: #5c3a1a;
+    --brass: #b8860b;
+    --sepia: #d4b896;
+    --dust: #8b7355;
+    --cream: #faf0e6;
+    --font-heading: 'Cinzel', serif;
+    --font-body: 'Lora', serif;
+    --font-accent: 'Cormorant Garamond', serif;
+}
+
+/* Main container */
+#practicalFormSection {
+    background-color: var(--cream);
+    border: 2px solid var(--sepia);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 8px 24px rgba(60, 46, 31, 0.15);
+    max-width: 600px;
+    width: 100%;
+}
+
+/* Heading */
+#practicalFormSection h2 {
+    font-family: var(--font-heading);
+    color: var(--leather);
+    font-size: 1.8rem;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--brass);
+    padding-bottom: 0.5rem;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+/* Form groups */
+#practicalFormSection .formGroup {
+    margin-bottom: 1.25rem;
+}
+
+#practicalFormSection label {
+    display: block;
+    font-family: var(--font-accent);
+    font-weight: 600;
+    color: var(--leather);
+    margin-bottom: 0.3rem;
+    font-size: 1rem;
+}
+
+#practicalFormSection input,
+#practicalFormSection textarea {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    background-color: var(--parchment);
+    border: 1px solid var(--sepia);
+    border-radius: 6px;
+    font-family: var(--font-body);
+    color: var(--ink);
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+}
+
+#practicalFormSection input:focus,
+#practicalFormSection textarea:focus {
+    outline: none;
+    border-color: var(--brass);
+    background-color: #fdf6eb;
+    box-shadow: 0 0 0 3px rgba(184, 134, 11, 0.2);
+}
+
+#practicalFormSection textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Buttons */
+#practicalFormSection .buttonSection {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+#practicalFormSection .buttonSection button {
+    font-family: var(--font-accent);
+    font-weight: 600;
+    padding: 0.6rem 2rem;
+    border: 1px solid var(--brass);
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.2s;
+    background-color: var(--leather);
+    color: var(--cream);
+}
+
+#practicalFormSection .buttonSection button:hover {
+    background-color: var(--brass);
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(92, 58, 26, 0.3);
+}
+
+/* Display mode */
+#practicalFormSection .displayMode {
+    font-family: var(--font-body);
+    color: var(--ink);
+    font-size: 1.05rem;
+}
+
+#practicalFormSection .displayMode p {
+    margin: 0.6rem 0;
+    padding: 0.3rem 0;
+    border-bottom: 1px dashed var(--sepia);
+}
+
+#practicalFormSection .displayMode .buttonSection {
+    margin-top: 1.5rem;
+}

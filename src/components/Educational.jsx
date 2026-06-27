@@ -1,4 +1,5 @@
 import { useState } from "react"
+import "../styles/Educational.css"
 
 export default function EducationalSection(){
 
