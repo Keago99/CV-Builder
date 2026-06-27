@@ -1,9 +1,9 @@
 import { useState } from "react"
 
-export default function GeneralSection(){
+export default function EducationalSection(){
 
     // UseState varibles
-    const [editing, setEdit] = useState("true");
+    const [editing, setEdit] = useState(true);
     const [schoolName, setSName] = useState("");
     const [studyTitle, setStudTitle] = useState ("");
     const [startDate, setStartDate] = useState("");
@@ -28,11 +28,16 @@ export default function GeneralSection(){
     }
 
     const handleEdit = () => {
-
+        setEdit(true);
     }
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        if(endDate && startDate && endDate < startDate){
+            alert("Start date cannot be before end date!");
+            return;
+        }
+        setEdit(false);
     }
 
     return(
@@ -44,14 +49,14 @@ export default function GeneralSection(){
                         <label>School Name: </label>
                         <input type="text"
                         value={schoolName}
-                        onChange={handleSNameChange}/>
+                        onChange={handleSchoolNameChange}/>
                     </div>
                     <div className="formGroup">
                         <label>Study Title: </label>
                         <input
                         type="text"
-                        value={schoolName}
-                        onChange={handleSchoolNameChange}
+                        value={studyTitle}
+                        onChange={handleStudyTitle}
                         />
                     </div>
                     <div className="formGroup">
@@ -68,10 +73,21 @@ export default function GeneralSection(){
                         onChange={handleEndDate}
                         />
                     </div>
+                    <div className="buttonSection">
+                        <button type="submit">Submit</button>
+                    </div>
                 </form>
             ) : (
-                <div>
+                <div className="displayMode"> 
+                    <p>School Name: {schoolName}</p>
+                    <p>Study Title:{studyTitle} </p>
+                    <p>Start Date: {startDate}</p>
+                    <p>End Date: {endDate}</p>
+                    <div className="buttonSection">
+                        <button type="button" onClick={handleEdit}>Edit</button>
+                    </div>
                 </div>
+                
             )}
         </div>
     )
